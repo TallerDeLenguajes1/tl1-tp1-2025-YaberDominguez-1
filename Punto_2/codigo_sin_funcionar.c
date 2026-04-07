@@ -1,9 +1,9 @@
 // codigo_roto.c
 #include <stdio.h>
 
-int duplicar_numero(int numero) {
-    numero = numero * 2;
-    return numero;
+int duplicar_numero(int *numero) {
+    *numero = *numero * 2;
+    return *numero;
 }
 
 int main() {
@@ -19,7 +19,7 @@ int main() {
     int suma = valor1 + valor2;
     printf("La suma es: %d\n", suma);
 
-    valor1 = duplicar_numero(valor1);
+    duplicar_numero(&valor1);
     printf("El primer valor duplicado es: %d\n", valor1);
 
     return 0;
